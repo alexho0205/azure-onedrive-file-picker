@@ -4,6 +4,30 @@
 本專案是由 Azure 提供 SSO 範例檔,再自行加入 onedrive.js 
 原專案說明可以參考 Origin.README.md 
 
+## 註冊服務
+- 首先你必須有 azure portal 的帳號
+- 使用 azure 帳號登入 azre portal 進入 active directory 服務 → 應用程式註冊 → 新增註冊
+    - 支援的帳戶類型選擇 →組織&個人
+    - URL選擇 → 單頁應用程式 SPA
+    - 註冊成功後, 你應該會有識別碼( 如下)
+    > 應用程式 (用戶端) 識別碼:
+    > 
+    > 
+    > ………..-……..-……..-……..-……..……..……..cfea
+    > 
+    > 物件識別碼:
+    > 
+    > ………..-……..-……..-……..-……..……..……..919
+    > 
+    > 目錄 (租用戶) 識別碼:
+    > 
+    > ………..-……..-……..-……..-……..……..……..d34
+    > 
+- 請將服務加入檔案讀取權限  active directory 服務 → 應用程式註冊 → 點擊你剛才建立的應用程式 → API權限 → 新增權限
+    - 選擇 Microsoft Graph
+    - 選擇 委派的權限
+    - 搜尋 files → 找到 [Files.Read](http://Files.Read) 這個權限並加入到API
+
 ## 運行本專案
 
 1. Open authConfig.js 調整 clientId 內容
